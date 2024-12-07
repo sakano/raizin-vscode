@@ -1,0 +1,127 @@
+{
+  "name": "raizin-vscode",
+  "displayName": "Raizin script",
+  "description": "Language support for Raizin event script",
+  "version": "1.0.0",
+  "license": "MIT",
+  "publisher": "Biscrat",
+  "author": {
+    "name": "Naoya Komatsu"
+  },
+  "engines": {
+    "vscode": "^1.95.0"
+  },
+  "homepage": "https://github.com/sakano/raizin-vscode",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sakano/raizin-vscode.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sakano/raizin-vscode/issues"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "keywords": [
+    "雷神7",
+    "八星帝"
+  ],
+  "activationEvents": [
+    "onLanguage:raizin"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "raizin",
+        "aliases": [
+          "raizin"
+        ],
+        "extensions": [
+          ".txt"
+        ]
+      }
+    ],
+    "configuration": {
+      "title": "Raizin",
+      "properties": {
+        "raizin-vscode.target": {
+          "type": "string",
+          "enum": [
+            "rai7",
+            "rai8"
+          ],
+          "enumDescriptions": [
+            "雷神7のスクリプト",
+            "八星帝のスクリプト"
+          ],
+          "enumItemLabels": [
+            "雷神7",
+            "八星帝"
+          ],
+          "default": "rai8",
+          "description": "対象のスクリプトバージョンを設定します",
+          "order": 0
+        },
+        "raizin-vscode.psonPath": {
+          "type": "string",
+          "default": "../csv/pson1.csv",
+          "description": "psonN.csvのファイルパスを設定します",
+          "order": 1
+        },
+        "raizin-vscode.pnetPath": {
+          "type": "string",
+          "default": "../csv/pnet1.csv",
+          "description": "pnet1.csvのファイルパスを設定します",
+          "order": 3
+        },
+        "raizin-vscode.itemPath": {
+          "type": "string",
+          "default": "../csv/item.csv",
+          "description": "item.csvのファイルパスを設定します",
+          "order": 4
+        },
+        "raizin-vscode.skillPath": {
+          "type": "string",
+          "default": "../csv/sk_base.csv",
+          "description": "sk_base.csvのファイルパスを設定します",
+          "order": 5
+        },
+        "raizin-vscode.rai7ShipPath": {
+          "type": "string",
+          "default": "../csv/fship.csv",
+          "description": "雷神7のfship.csvのファイルパスを設定します",
+          "order": 5
+        },
+        "raizin-vscode.rai8ShipPath": {
+          "type": "string",
+          "default": "../csv/ft_base.csv",
+          "description": "八星帝のft_base.csvのファイルパスを設定します",
+          "order": 5
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.9",
+    "@types/node": "20.x",
+    "@types/vscode": "^1.95.0",
+    "@typescript-eslint/eslint-plugin": "^8.10.0",
+    "@typescript-eslint/parser": "^8.7.0",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1",
+    "eslint": "^9.13.0",
+    "typescript": "^5.6.3"
+  },
+  "dependencies": {
+    "vscode-languageclient": "^9.0.1"
+  }
+}

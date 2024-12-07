@@ -1,0 +1,68 @@
+// See https://go.microsoft.com/fwlink/?LinkId=733558
+// for the documentation about the tasks.json format
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Build All",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"dependsOn": [
+				"Build server",
+				"Build client"
+			]
+		},
+		{
+			"label": "Build server",
+			"type": "shell",
+			"command": "dotnet",
+			"args": [
+				"build",
+				"${workspaceFolder}/../LanguageServer/RaizinLanguageServer/RaizinLanguageServer.csproj",
+				"--configuration",
+				"Debug"
+			],
+			"group": {
+				"kind": "build"
+			},
+			"presentation": {
+				"reveal": "silent",
+				"clear": true
+			},
+			"problemMatcher": "$msCompile",
+		},
+		{
+			"label": "Build client",
+			"type": "npm",
+			"script": "watch",
+			"problemMatcher": "$tsc-watch",
+			"isBackground": true,
+			"presentation": {
+				"reveal": "never"
+			},
+			"group": {
+				"kind": "build"
+			}
+		},
+		{
+			"label": "Test server",
+			"type": "shell",
+			"command": "dotnet",
+			"args": [
+				"test",
+				"${workspaceFolder}/../LanguageServer/RaizinLanguageServer.sln",
+				"--configuration",
+				"Debug"
+			],
+			"presentation": {
+				"reveal": "always",
+			},
+			"group": {
+				"kind": "test",
+				"isDefault": true
+			},
+		}
+	]
+}
