@@ -73,19 +73,19 @@
           "type": "string",
           "default": "../csv/pnet1.csv",
           "description": "pnet1.csvのファイルパスを設定します",
-          "order": 3
+          "order": 2
         },
         "raizin-vscode.itemPath": {
           "type": "string",
           "default": "../csv/item.csv",
           "description": "item.csvのファイルパスを設定します",
-          "order": 4
+          "order": 3
         },
         "raizin-vscode.skillPath": {
           "type": "string",
           "default": "../csv/sk_base.csv",
           "description": "sk_base.csvのファイルパスを設定します",
-          "order": 5
+          "order": 4
         },
         "raizin-vscode.rai7ShipPath": {
           "type": "string",
@@ -97,7 +97,7 @@
           "type": "string",
           "default": "../csv/ft_base.csv",
           "description": "八星帝のft_base.csvのファイルパスを設定します",
-          "order": 5
+          "order": 6
         }
       }
     }
