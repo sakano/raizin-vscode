@@ -184,6 +184,11 @@ public sealed class PersonStatus(string name, string id, ParameterType type) : S
         {
             Description = "0なら妊娠していない。1以上なら妊娠何ヶ月目かを表す",
         },
+        new("不妊", "-99", ParameterType.Choice)
+        {
+            Choices = [new("0", "不妊でない"), new("1", "不妊")],
+            Description = "0: 不妊でない  \n1: 不妊",
+        },
         new("婚姻", "17", ParameterType.PersonId)
         {
             Description = "結婚相手の人物ID。0なら未婚",
@@ -203,6 +208,8 @@ public sealed class PersonStatus(string name, string id, ParameterType type) : S
         new("子供数", "-99", ParameterType.Int),
         new("子供男", "-99", ParameterType.Int),
         new("子供女", "-99", ParameterType.Int),
+        new("特種B", "-99", ParameterType.Int),
+        new("特種C", "-99", ParameterType.Int),
         new("NON", "-1", ParameterType.Unknown),
     ];
 }

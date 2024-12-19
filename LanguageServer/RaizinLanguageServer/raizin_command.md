@@ -520,6 +520,9 @@ OLD はシステムで設定されているオルド可能年齢です。
 # if_loop_cnt
 - rai8,if
 
+# if_hmode,p1:Choice|on|off|
+- rai8,if
+ 
 # add_seikin,精勤ポイント:Int
 プレイヤーの精勤ポイントを増減します。
 
@@ -2243,6 +2246,11 @@ rnd コマンドのジャンプ先
   41:育成対象(王子、姫、孫)
 - rai8,command
 
+# sel_mplist,p1:Any,覇王ID:RulerId,メッセージ:Speech,p4:Int
+- rai8,command
+# get_mplist,p1:Int
+- rai8,command
+
 # opencg,人物ID:PersonId
 指定人物のCGモードを解放します。
 - rai8,command
@@ -2272,6 +2280,9 @@ btl_kakuto で人物ID1が勝利した場合のジャンプ先
 
 # case_winB
 btl_kakuto で人物ID2が勝利した場合のジャンプ先
+- rai8,command,control
+
+# kakuto_team,a1:PersonId,a2:PersonId,a3:PersonId,b1:PersonId,b2:PersonId,b3:PersonId,p7:Any,gzinファイル名:File
 - rai8,command,control
 
 # surrend,覇王ID1:RulerId,覇王ID2:RulerId,モード:Choice|0:部下|1:捕虜|2:追放|3:死刑
@@ -2334,6 +2345,13 @@ eveflg_countupで登録したイベントフラグのカウントを強制終了
 # r8_dialog,メッセージ:Speech
 ダイアログを表示します。
 - rai8,command
+
+# r8_dialog2,メッセージ:Speech
+- rai8,command,control
+# case_no
+- rai8,command,control
+# case_yes
+- rai8,command,control
 
 # set_fc_filter,左上:Choice|0:off|1:on,左下:Choice|0:off|1:on,右上:Choice|0:off|1:on,右下:Choice|0:off|1:on
 顔フィルターを設定します。1(on)にすると以降の処理で顔グラに各種フィルターがかかります。
@@ -2866,11 +2884,21 @@ z8_old_bgv_play, z8_old_dvc_play による再生を停止します。
 # set_hoflg,p1:PersonId,p2:Any,p3:Any
 - rai8,command
 
+# aki_aje_union
+- rai8,command
+ 
+# set_pback,覇王ID:RulerId,人物ID:PersonId
+- rai8,command
+ 
 # rar_kisaku1
 - rai8,command
 # rar_kisaku2
 - rai8,command
 
-# sp_cmd[0-9]+
-- rai8,command,regex
+# sp_cmd05,p1:Any
+- rai8,command,deprecated
+
+# sp_cmd[0-4]+
+- rai8,command,regex,deprecated
+
 
