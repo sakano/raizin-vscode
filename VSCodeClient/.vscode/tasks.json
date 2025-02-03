@@ -47,6 +47,65 @@
 			}
 		},
 		{
+			"label": "Package extension",
+			"group": "none",
+			"dependsOn": [
+				"Publish server",
+				"Vsce package",
+				"Remove published server"
+			],
+			"dependsOrder": "sequence",
+			"presentation": {
+				"reveal": "always",
+				"focus": true,
+				"clear": true
+			},
+			"problemMatcher": []
+		},
+		{
+			"label": "Publish server",
+			"type": "shell",
+			"command": "dotnet",
+			"args": [
+				"publish",
+				"${workspaceFolder}/../LanguageServer/RaizinLanguageServer/RaizinLanguageServer.csproj",
+				"--output",
+				"${workspaceFolder}/",
+				"--runtime",
+				"win-x64",
+				"--self-contained",
+				"true",
+				"/p:DebugType=None",
+				"/p:DebugSymbols=false"
+			],
+			"problemMatcher": "$msCompile",
+			"hide": true
+		},
+		{
+			"label": "Remove published server",
+			"type": "shell",
+			"command": "rm",
+			"args": [
+				"${workspaceFolder}/RaizinLanguageServer.exe"
+			],
+			"problemMatcher": [],
+			"hide": true
+		},
+		{
+			"label": "Vsce package",
+			"type": "shell",
+			"command": "vsce",
+			"args" : [
+				"package",
+				"--target",
+				"win32-x64",
+				"--out",
+				"${workspaceFolder}/../",
+			],
+			"problemMatcher": [],
+			"hide": true
+		},
+		{
 			"label": "Test server",
 			"type": "shell",
 			"command": "dotnet",

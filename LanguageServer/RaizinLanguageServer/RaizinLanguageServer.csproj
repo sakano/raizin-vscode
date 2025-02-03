@@ -7,6 +7,7 @@
         <Nullable>enable</Nullable>
         <LangVersion>default</LangVersion>
         <NeutralLanguage>ja</NeutralLanguage>
+        <PublishSingleFile>true</PublishSingleFile>
     </PropertyGroup>
 
     <ItemGroup>
