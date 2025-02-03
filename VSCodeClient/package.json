@@ -2,7 +2,7 @@
   "name": "raizin-vscode",
   "displayName": "Raizin script",
   "description": "Language support for Raizin event script",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "MIT",
   "publisher": "Biscrat",
   "author": {
