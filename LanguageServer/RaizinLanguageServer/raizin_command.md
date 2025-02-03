@@ -2898,6 +2898,9 @@ z8_old_bgv_play, z8_old_dvc_play による再生を停止します。
 # sp_cmd05,p1:Any
 - rai8,command,deprecated
 
+# sp_cmd06,p1:Any
+- rai8,command,deprecated
+
 # sp_cmd[0-4]+
 - rai8,command,regex,deprecated
 
