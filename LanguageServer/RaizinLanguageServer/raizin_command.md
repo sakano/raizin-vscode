@@ -1617,7 +1617,14 @@ set_winfo と異なり、現在の値からの差分値（相対値）を指定�
 事前に表示位置が出現可能な位置であるか if_cwpos で確認する必要あり。
 - rai7,command
 
-# put_wakusei,惑星ID:PlanetId,人物ID:PersonId
+# del_wakusei,惑星ID:PlanetId
+表示状態の惑星を非表示状態にします。
+惑星IDに衛星を指定した場合は、その衛星のみ非表示になります。
+惑星IDに主星を指定した場合は、その惑星系全体が非表示になります。
+- rai8,command
+ 
+# put_wakusei,惑星ID:PlanetId,覇王ID:RulerId
+非表示状態の惑星を覇王IDの惑星として出現させます。
 - rai8,command
 
 # set_wjinko,惑星ID:PlanetId,増加人口:Int
