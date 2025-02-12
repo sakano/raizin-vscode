@@ -2376,10 +2376,6 @@ set_kasi で仮死状態にした人物IDを仕官中に設定します。
 覇王IDが0の場合、元の覇王に仕官します。
 - rai8,command
 
-# plt_apr,覇王ID:RulerId,惑星ID:PlanetId
-非表示状態の惑星を覇王IDの惑星として出現させます。
-- rai8,command
-
 # set_pid,pid1:PersonId,pid2:PersonId,pid3:PersonId,pid4:PersonId
 pid1,pid2,pid3,pid4に人物IDを設定します。
 - rai8,command,if
