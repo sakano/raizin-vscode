@@ -1,0 +1,23 @@
+version: 2
+updates:
+  # 通常の更新PRは作らずセキュリティ更新のみ
+  - package-ecosystem: "npm"
+    directory: "/VSCodeClient"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+      timezone: "Asia/Tokyo"
+    open-pull-requests-limit: 0
+
+  - package-ecosystem: "nuget"
+    directories:
+      - "/LanguageServer/RaizinLanguageServer"
+      - "/LanguageServer/RaizinLanguageServerTests"
+      - "/LanguageServer/SourceGenerators"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+      timezone: "Asia/Tokyo"
+    open-pull-requests-limit: 0
